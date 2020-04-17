@@ -24,10 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Perusahaan Pengirim</h1>
+                <div class="col-sm-12">
+                    <br><br>
+                    <h1 align=center style="font-family:Tahoma;" class="m-0 text-dark"> <strong>DATA PERUSAHAAN PENGIRIM</strong></h1>
                 </div><!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active">Data Perusahaan Pengirim</li>
@@ -38,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
     <section class="content">
         <div class="row">
-            <div class="col-7">
+            <div class="col-md-2"></div>
+            <div class="col-8">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Edit Data</h3>

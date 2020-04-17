@@ -1,14 +1,32 @@
 <nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
     <!-- Left navbar links -->
-    <ul class="navbar-nav">
+    <ul style="font-weight: bold" class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+            <span class="nav-link"><i class="fas fa-user"></i>&emsp;Admin PJC</span>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="index.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="index.php?page=module/admin/index" class="nav-link">Admin</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/pengirim/index" class="nav-link">Pengirim</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/perusahaan/index" class="nav-link">Perusahaan</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/party/index" class="nav-link">Palm Karnel</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/satuan_pupuk/index" class="nav-link">Satuan Pupuk</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/pupuk/index" class="nav-link">Pupuk</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="logout.php" class="nav-link">Sign Out</a>
         </li>
     </ul>
 

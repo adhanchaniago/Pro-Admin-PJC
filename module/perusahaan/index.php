@@ -3,10 +3,11 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Perusahaan</h1>
+                <div class="col-sm-12">
+                    <br><br>
+                    <h1 align=center style="font-family:Tahoma;" class="m-0 text-dark"> <strong>DATA PERUSAHAAN</strong> </h1>
                 </div><!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active">Data Perusahaan</li>
@@ -26,7 +27,7 @@
                     </div> -->
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <a href="index.php?page=module/perusahaan/tambah" class="btn btn-success mb-4">Tamba Data</a>
+                        <a href="index.php?page=module/perusahaan/tambah" class="btn btn-success mb-4">Tambah Data</a>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>

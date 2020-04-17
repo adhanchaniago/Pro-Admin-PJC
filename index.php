@@ -7,7 +7,7 @@ if (empty($_SESSION['akun'])) {
   </script>";
 }
 
-error_reporting(0); 
+error_reporting(0);
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ error_reporting(0);
   <?php include 'components/head.php' ?>
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="sidebar-collapse">
   <div class="wrapper">
 
     <!-- Navbar -->
@@ -26,7 +26,6 @@ error_reporting(0);
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <?php include 'components/side-bar.php' ?>
 
     <!-- Content Wrapper. Contains page content -->
     <?php include 'content.php' ?>

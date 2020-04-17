@@ -1,22 +1,20 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Party</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <br><br>
+                    <h1 align=center style="font-family:Tahoma;" class="m-0 text-dark"> <strong>DATA PALM KARNEL</strong> </h1>
+                </div>
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                        <li class="breadcrumb-item active">Data Party</li>
+                        <li class="breadcrumb-item active">Data Palm Karnel</li>
                     </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
     <section class="content">
         <?php
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -38,7 +36,8 @@
         }
         ?>
         <div class="row">
-            <div class="col-7">
+            <div class="col-md-2"></div>
+            <div class="col-8">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Tambah Data</h3>
@@ -92,20 +91,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
                             <button name="simpan" type="submit" class="btn btn-primary">Simpan</button>
                             <button type="reset" class="btn btn-warning float-center">Reset</button>
                             <a href="index.php?page=module/party/index" class="btn btn-success float-right">Kembali</a>
                         </div>
-                        <!-- /.card-footer -->
                     </form>
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
     </section>
-    <!-- /.content -->
 </div>
