@@ -5,6 +5,7 @@ error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Cetak Rekap</title>
     <!-- Font Awesome -->
@@ -16,6 +17,7 @@ error_reporting(0);
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+
 <body>
     <div class="wrapper">
         <!-- Main content -->
@@ -54,8 +56,8 @@ error_reporting(0);
                             To
                             <address>
                                 <?php
-                                $id = $_GET['id'];
-                                $dataParty = $db->getOneParty($id);
+                                // $id = $_GET['id'];
+                                // $dataParty = $db->getOneParty($id);
                                 // var_dump($dataParty);
                                 ?>
                             </address>
@@ -228,4 +230,5 @@ error_reporting(0);
         window.addEventListener("load", window.print());
     </script>
 </body>
+
 </html>

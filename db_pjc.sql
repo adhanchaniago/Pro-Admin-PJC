@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Apr 2020 pada 09.47
+-- Waktu pembuatan: 17 Apr 2020 pada 20.03
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -51,12 +51,12 @@ INSERT INTO `tb_admin` (`admin_id`, `admin_username`, `admin_password`, `admin_n
 
 CREATE TABLE `tb_party` (
   `party_id` int(11) NOT NULL,
-  `perusahaan_id` int(11) NOT NULL,
-  `party_spk` varchar(255) NOT NULL,
-  `party_do` varchar(255) NOT NULL,
-  `party_po` varchar(225) NOT NULL,
-  `party_nokontrak` varchar(225) NOT NULL,
-  `party_kontrak` int(11) NOT NULL
+  `perusahaan_id` int(11) DEFAULT NULL,
+  `party_spk` varchar(255) DEFAULT NULL,
+  `party_do` varchar(255) DEFAULT NULL,
+  `party_po` varchar(225) DEFAULT NULL,
+  `party_nokontrak` varchar(225) DEFAULT NULL,
+  `party_kontrak` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -64,11 +64,7 @@ CREATE TABLE `tb_party` (
 --
 
 INSERT INTO `tb_party` (`party_id`, `perusahaan_id`, `party_spk`, `party_do`, `party_po`, `party_nokontrak`, `party_kontrak`) VALUES
-(5, 7, 'SP00123213', 'DO12312321', '0A9', '001/AII1', 8000),
-(6, 7, '2001da', '002da', 'OA3da', 'qwertya', 7000011),
-(8, 7, 'ASDSDA/12312/313131', 'SEASE/12312/QWEQE', 'OA5', '12312/31231/23', 90000),
-(9, 7, 'a', 'a', 'a', 'a', 12),
-(10, 9, 'asd', 'asd', 'asd', 'asd', 989898);
+(12, 8, '7786024074', '014/DO/BBIP-UIP/PK/II/2020', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 90000);
 
 -- --------------------------------------------------------
 
@@ -79,32 +75,34 @@ INSERT INTO `tb_party` (`party_id`, `perusahaan_id`, `party_spk`, `party_do`, `p
 CREATE TABLE `tb_party_detail` (
   `party_detail_id` int(11) NOT NULL,
   `party_id` int(11) NOT NULL,
-  `party_detail_no_polisi` varchar(255) NOT NULL,
-  `party_detail_tgl_muat_pabrik` date NOT NULL,
-  `party_detail_do` varchar(255) NOT NULL,
-  `party_detail_kontrak` varchar(225) NOT NULL,
-  `party_detail_sppb` int(11) NOT NULL,
-  `party_detail_ton_muat_pabrik` int(11) NOT NULL,
-  `party_detail_tgl_bongkar_uip` date NOT NULL,
-  `party_detail_ton_bongkar_uip` int(11) NOT NULL,
-  `party_detail_selisih_ton` int(11) NOT NULL,
-  `party_detail_nama_supir` varchar(255) NOT NULL,
-  `party_detail_upah_kg` int(11) NOT NULL,
-  `party_detail_jum_tagihan` int(11) NOT NULL,
-  `party_detail_admin` int(11) NOT NULL,
-  `party_detail_driver_deposito` int(11) NOT NULL,
-  `party_detail_nagari` int(11) NOT NULL,
-  `party_detail_total_tagihan` int(11) NOT NULL
+  `party_detail_muat_no_sim` varchar(255) DEFAULT NULL,
+  `party_detail_muat_jenis` varchar(255) DEFAULT NULL,
+  `party_detail_muat_berat` varchar(255) DEFAULT NULL,
+  `party_detail_muat_tujuan` varchar(255) DEFAULT NULL,
+  `party_detail_no_polisi` varchar(255) DEFAULT NULL,
+  `party_detail_tgl_muat_pabrik` date DEFAULT NULL,
+  `party_detail_do` varchar(255) DEFAULT NULL,
+  `party_detail_kontrak` varchar(225) DEFAULT NULL,
+  `party_detail_sppb` int(11) DEFAULT NULL,
+  `party_detail_ton_muat_pabrik` int(11) DEFAULT NULL,
+  `party_detail_tgl_bongkar_uip` date DEFAULT NULL,
+  `party_detail_ton_bongkar_uip` int(11) DEFAULT NULL,
+  `party_detail_selisih_ton` int(11) DEFAULT NULL,
+  `party_detail_nama_supir` varchar(255) DEFAULT NULL,
+  `party_detail_upah_kg` int(11) DEFAULT NULL,
+  `party_detail_jum_tagihan` int(11) DEFAULT NULL,
+  `party_detail_admin` int(11) DEFAULT NULL,
+  `party_detail_driver_deposito` int(11) DEFAULT NULL,
+  `party_detail_nagari` int(11) DEFAULT NULL,
+  `party_detail_total_tagihan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_party_detail`
 --
 
-INSERT INTO `tb_party_detail` (`party_detail_id`, `party_id`, `party_detail_no_polisi`, `party_detail_tgl_muat_pabrik`, `party_detail_do`, `party_detail_kontrak`, `party_detail_sppb`, `party_detail_ton_muat_pabrik`, `party_detail_tgl_bongkar_uip`, `party_detail_ton_bongkar_uip`, `party_detail_selisih_ton`, `party_detail_nama_supir`, `party_detail_upah_kg`, `party_detail_jum_tagihan`, `party_detail_admin`, `party_detail_driver_deposito`, `party_detail_nagari`, `party_detail_total_tagihan`) VALUES
-(15, 5, 'BA 2 SE', '2020-03-31', 'UIPD0017820', 'AAI/002', 810, 8000, '2020-03-31', 7999, 1, 'Egova', 215, 1719785, 85000, 50000, 5000, 1579785),
-(21, 5, 'BA 1389 YU', '2020-04-03', 'AAI/001', 'AAI/001', 1000, 50000, '2020-04-03', 30000, 20000, 'Ujang', 1000, 30000000, 2000, 5000, 5000, 29988000),
-(22, 10, 'BA 2 SE', '2020-04-15', '123', 'asd', 123412, 19000, '2020-04-15', 210000, 191000, 'Asd', 210, 44100000, 8000, 9000, 5000, 44078000);
+INSERT INTO `tb_party_detail` (`party_detail_id`, `party_id`, `party_detail_muat_no_sim`, `party_detail_muat_jenis`, `party_detail_muat_berat`, `party_detail_muat_tujuan`, `party_detail_no_polisi`, `party_detail_tgl_muat_pabrik`, `party_detail_do`, `party_detail_kontrak`, `party_detail_sppb`, `party_detail_ton_muat_pabrik`, `party_detail_tgl_bongkar_uip`, `party_detail_ton_bongkar_uip`, `party_detail_selisih_ton`, `party_detail_nama_supir`, `party_detail_upah_kg`, `party_detail_jum_tagihan`, `party_detail_admin`, `party_detail_driver_deposito`, `party_detail_nagari`, `party_detail_total_tagihan`) VALUES
+(23, 12, 'Consequatur Optio ', 'Repellendus Eos et', '16', 'Neque incididunt per', 'Cupidatat nisi ducim', NULL, 'Id neque maxime sint', 'Modi minus ipsum sit', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,8 +143,7 @@ CREATE TABLE `tb_perusahaan` (
 
 INSERT INTO `tb_perusahaan` (`perusahaan_id`, `perusahaan_nama`, `perusahaan_telp`, `perusahaan_alamat`) VALUES
 (7, 'CV Mediatama Web Indonesia Padang', '0752-22678-123', 'Padang Barat'),
-(8, 'PT Kunanga Jantan', '082546864568', 'Jln. Bypass KM 10'),
-(9, 'Istana', '0192313', 'Padang');
+(8, 'PT Kunanga Jantan', '082546864568', 'Jln. Bypass KM 10');
 
 -- --------------------------------------------------------
 
@@ -297,13 +294,13 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_party`
 --
 ALTER TABLE `tb_party`
-  MODIFY `party_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `party_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_party_detail`
 --
 ALTER TABLE `tb_party_detail`
-  MODIFY `party_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `party_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pengirim`

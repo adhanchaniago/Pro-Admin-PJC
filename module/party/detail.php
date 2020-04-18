@@ -7,7 +7,7 @@
                     <?php
                     $id = $_GET['id'];
                     $dataParty = $db->getOneParty($id);
-                    // var_dump($dataParty);
+                    var_dump($dataParty);
                     ?>
                     <h1 class="m-0 text-dark">Data Laporan Transporter </h1>
                     <table>
@@ -53,13 +53,14 @@
                     </div> -->
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <a href="index.php?page=module/party/tambah_detail&id=<?php echo $id ?>" class="btn btn-success mb-4">Tambah Data</a>
+                        <a href="index.php?page=module/party/tambah_detail&id=<?php echo $id ?>" class="btn btn-success mb-4">Tambah Permintaan Muatan</a>
                         <a href="index.php?page=module/party/index" class="btn btn-warning mb-4">Kembali</a>
-                        <a href="index.php?page=module/party/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a>
+                        <!-- <a href="index.php?page=module/party/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a> -->
                         <table id="example1" class="table-responsive table table-bordered table-striped">
                             <thead align="center">
                                 <tr>
                                     <th>No</th>
+                                    <th>Aksi</th>
                                     <th>No Polisi</th>
                                     <th>Tgl Muat Pabrik</th>
                                     <th>No D/O</th>
@@ -76,7 +77,6 @@
                                     <th>Driver Deposito</th>
                                     <th>Nagari</th>
                                     <th>Total Tagihan</th>
-                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,6 +93,13 @@
                                 ?>
                                     <tr>
                                         <td width="5px"><?= ++$no ?></td>
+                                        <td width="160px">
+                                            <a href="index.php?page=module/party/update_detail&id=<?= $dataDetailParty->party_detail_id ?>&idParty=<?php echo $dataDetailParty->party_id ?>" class="btn btn-sm btn-warning">Update</a>
+                                            <p class="mt-1 mb-1"></p>
+                                            <a target="blank" href="module/party/cetakMuatan.php?id=<?= $dataDetailParty->party_detail_id ?>" class="btn btn-sm btn-primary">Cetak Muatan</a>
+                                            <p class="mt-1 mb-1"></p>
+                                            <a href="index.php?page=module/party/hapusDetail&idh=<?= $dataDetailParty->party_detail_id ?>&id=<?php echo $id ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
                                         <td><?= $dataDetailParty->party_detail_no_polisi ?></td>
                                         <td><?= tgl_indo($dataDetailParty->party_detail_tgl_muat_pabrik) ?></td>
                                         <td><?= $dataDetailParty->party_detail_do ?></td>
@@ -109,10 +116,7 @@
                                         <td><?= rupiah($dataDetailParty->party_detail_driver_deposito) ?></td>
                                         <td><?= rupiah($dataDetailParty->party_detail_nagari) ?></td>
                                         <td><?= rupiah($dataDetailParty->party_detail_total_tagihan) ?></td>
-                                        <td width="160px">
-                                            <!-- <a href="index.php?page=module/party/edit&id=<?= $dataDetailParty->party_id ?>" class="btn btn-sm btn-warning">Edit</a> -->
-                                            <a href="index.php?page=module/party/hapusDetail&idh=<?= $dataDetailParty->party_detail_id ?>&id=<?php echo $id ?>" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
+
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>

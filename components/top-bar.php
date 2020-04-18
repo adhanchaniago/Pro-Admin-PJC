@@ -1,4 +1,4 @@
-<nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+<nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
     <!-- Left navbar links -->
     <ul style="font-weight: bold" class="navbar-nav">
         <li class="nav-item">
@@ -8,19 +8,19 @@
             <a href="index.php" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="index.php?page=module/admin/index" class="nav-link">Admin</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index.php?page=module/pengirim/index" class="nav-link">Pengirim</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index.php?page=module/perusahaan/index" class="nav-link">Perusahaan</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index.php?page=module/party/index" class="nav-link">Palm Karnel</a>
+            <a href="index.php?page=module/admin/index" class="nav-link">Pengguna</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="index.php?page=module/satuan_pupuk/index" class="nav-link">Satuan Pupuk</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/pengirim/index" class="nav-link">Pengirim Invoice</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/perusahaan/index" class="nav-link">Perusahaan Kerja Sama</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/party/index" class="nav-link">Palm Karnel</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
             <a href="index.php?page=module/pupuk/index" class="nav-link">Pupuk</a>

@@ -115,7 +115,7 @@ class Db extends Conn
         $query = $this->get("   SELECT * 
                                 FROM tb_party 
                                 JOIN tb_perusahaan 
-                                ON tb_party.perusahaan_id=tb_perusahaan.perusahaan_id ");
+                                ON tb_party.perusahaan_id=tb_perusahaan.perusahaan_id ORDER BY tb_party.party_id DESC ");
         return $query;
     }
     public function saveParty($data)
@@ -189,12 +189,13 @@ class Db extends Conn
                                 FROM tb_party_detail 
                                 JOIN tb_party
                                 ON tb_party_detail.party_id=tb_party.party_id 
-                                WHERE tb_party_detail.party_id = $id ");
+                                WHERE tb_party_detail.party_id = '$id' ORDER BY tb_party_detail.party_detail_id DESC ");
         return $query;
     }
     public function saveDetailParty($data)
     {
 
+        $idDetail         = $data['idDetail'];
         $idParty          = $data['idParty'];
         $noPolisi         = $data['noPolisi'];
         $tglMuatPabrik    = $data['tglMuatPabrik'];
@@ -214,43 +215,69 @@ class Db extends Conn
         $totalTagihan     = $data['totalTagihan'];
 
         global $conn;
+        $query = " UPDATE `tb_party_detail` 
+                        SET 
+                        `party_id`= '$idParty',
+                        `party_detail_no_polisi`= '$noPolisi',
+                        `party_detail_tgl_muat_pabrik`= '$tglMuatPabrik',
+                        `party_detail_do`= '$noDo',
+                        `party_detail_kontrak`= '$noKontrak',
+                        `party_detail_sppb`= '$noSppb',
+                        `party_detail_ton_muat_pabrik`= '$tonaseMuatPabrik',
+                        `party_detail_tgl_bongkar_uip`= '$tglBongkarUip',
+                        `party_detail_ton_bongkar_uip`= '$tonaseBongkarUip',
+                        `party_detail_selisih_ton`= '$selisih',
+                        `party_detail_nama_supir`= '$namaSupir',
+                        `party_detail_upah_kg`= '$upah',
+                        `party_detail_jum_tagihan`= '$jumlahTagihan',
+                        `party_detail_admin`= '$adminOfficeFee',
+                        `party_detail_driver_deposito`= '$driverDeposito',
+                        `party_detail_nagari`= '$nagari',
+                        `party_detail_total_tagihan`= '$totalTagihan'
+                        WHERE
+                        `party_detail_id`= '$idDetail'
+                                                ";
+        return $conn->query($query);
+    }
+
+    public function saveDetailPartyMuat($data)
+    {
+
+        $idParty   = $data['idParty'];
+        $noPolisi  = $data['noPolisi'];
+        $namaSupir = $data['namaSupir'];
+        $noSim     = $data['noSim'];
+        $jenis     = $data['jenis'];
+        $berat     = $data['berat'];
+        $tujuan    = $data['tujuan'];
+        $noDo      = $data['noDo'];
+        $nokontrak = $data['nokontrak'];
+
+
+        global $conn;
         $query = "INSERT INTO tb_party_detail(  party_id,
                                                 party_detail_no_polisi,
-                                                party_detail_tgl_muat_pabrik,
-                                                party_detail_do,
-                                                party_detail_kontrak,
-                                                party_detail_sppb,
-                                                party_detail_ton_muat_pabrik,
-                                                party_detail_tgl_bongkar_uip,
-                                                party_detail_ton_bongkar_uip,
-                                                party_detail_selisih_ton,
                                                 party_detail_nama_supir,
-                                                party_detail_upah_kg,
-                                                party_detail_jum_tagihan,
-                                                party_detail_admin,
-                                                party_detail_driver_deposito,
-                                                party_detail_nagari,
-                                                party_detail_total_tagihan) 
+                                                party_detail_muat_no_sim,
+                                                party_detail_muat_jenis,
+                                                party_detail_do,
+                                                party_detail_muat_berat,
+                                                party_detail_muat_tujuan,
+                                                party_detail_kontrak) 
                                                 VALUES (
                                                     '$idParty',
                                                     '$noPolisi',
-                                                    '$tglMuatPabrik',
-                                                    '$noDo',
-                                                    '$noKontrak',
-                                                    '$noSppb',
-                                                    '$tonaseMuatPabrik',
-                                                    '$tglBongkarUip',
-                                                    '$tonaseBongkarUip',
-                                                    '$selisih',
                                                     '$namaSupir',
-                                                    '$upah',
-                                                    '$jumlahTagihan',
-                                                    '$adminOfficeFee',
-                                                    '$driverDeposito',
-                                                    '$nagari',
-                                                    '$totalTagihan')";
+                                                    '$noSim',
+                                                    '$jenis',
+                                                    '$noDo',
+                                                    '$berat',
+                                                    '$tujuan',
+                                                    '$nokontrak'
+                                                    )";
         return $conn->query($query);
     }
+
     public function deleteDetailParty($id)
     {
         global $conn;
@@ -259,11 +286,17 @@ class Db extends Conn
         // exit;
         return $conn->query($query);
     }
-    // public function getOneAdmin($id)
-    // {
-    //     $query = $this->get("SELECT * FROM tb_admin WHERE admin_id = '$id'");
-    //     return $query;
-    // }
+    public function getOneDetailParty($id)
+    {
+        $query = $this->get("SELECT * 
+                            FROM tb_party_detail 
+                            JOIN tb_party
+                            ON tb_party_detail.party_id = tb_party.party_id
+                            JOIN tb_perusahaan
+                            ON tb_perusahaan.perusahaan_id = tb_party.perusahaan_id
+                            WHERE tb_party_detail.party_detail_id = '$id'")[0];
+        return $query;
+    }
     // public function editAdmin($data)
     // {
     //     global $conn;

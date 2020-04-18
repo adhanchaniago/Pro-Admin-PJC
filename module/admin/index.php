@@ -27,7 +27,7 @@
                     </div> -->
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <a href="index.php?page=module/admin/tambah" class="btn btn-success mb-4">Tambah Data</a>
+                        <!-- <a href="index.php?page=module/admin/tambah" class="btn btn-success mb-4">Tambah Data</a> -->
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -50,9 +50,9 @@
                                         <td><?= $dataAdmin->admin_password ?></td>
                                         <td><?= $dataAdmin->admin_nama ?></td>
                                         <td><?= $dataAdmin->admin_level ?></td>
-                                        <td width="100px">
+                                        <td width="1px">
                                             <a href="index.php?page=module/admin/edit&id=<?= $dataAdmin->admin_id ?>" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="index.php?page=module/admin/hapus&id=<?= $dataAdmin->admin_id ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                            <!-- <a href="index.php?page=module/admin/hapus&id=<?= $dataAdmin->admin_id ?>" class="btn btn-sm btn-danger">Hapus</a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

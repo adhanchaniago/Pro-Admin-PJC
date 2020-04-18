@@ -1,14 +1,13 @@
 <?php
 // $conn = mysqli_connect('localhost', 'kittgcom_root', 'egova13081996', 'kittgcom_db_pjc');
-$conn = mysqli_connect('localhost', 'root', '', 'db_pjc');
+$conn = mysqli_connect('localhost', 'root', 'mysql', 'db_pjc');
 if ($conn->connect_errno) {
     echo "Filed to connect database : " . $conn->connect_errno;
     exit;
-    $conn = mysqli_connect('localhost', 'kittgcom_root', 'egova13081996', 'kittgcom_db_pjc');
-    // if ($conn->connect_errno) {
-    //     echo "Filed to connect database : " . $conn->connect_errno;
-    //     exit;
-    // }
+    if ($conn->connect_errno) {
+        echo "Filed to connect database : " . $conn->connect_errno;
+        exit;
+    }
 }
 
 class Conn

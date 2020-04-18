@@ -27,7 +27,7 @@
                     </div> -->
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <!-- <a href="index.php?page=module/pengirim/tambah" class="btn btn-success mb-4">Tambah Data</a> -->
+                        <a href="index.php?page=module/pengirim/tambah" class="btn btn-success mb-4">Tambah Data</a>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr>

@@ -7,7 +7,7 @@ if (empty($_SESSION['akun'])) {
   </script>";
 }
 
-error_reporting(0);
+// error_reporting(0);
 
 ?>
 <!DOCTYPE html>
