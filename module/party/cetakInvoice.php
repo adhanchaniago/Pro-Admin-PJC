@@ -126,9 +126,9 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
                                         $dataDetailPartys = $db->getAllDetailParty($id);
                                         foreach ($dataDetailPartys as $no => $dataDetailParty) :
                                             // var_dump($dataDetailParty);
-                                            $tMuat += $dataDetailParty->party_detail_ton_muat_pabrik;
-                                            $tBongkar += $dataDetailParty->party_detail_ton_bongkar_uip;
-                                            $tSelisih += $dataDetailParty->party_detail_selisih_ton;
+                                            @$tMuat += $dataDetailParty->party_detail_ton_muat_pabrik;
+                                            @$tBongkar += $dataDetailParty->party_detail_ton_bongkar_uip;
+                                            @$tSelisih += $dataDetailParty->party_detail_selisih_ton;
                                         ?>
                                             <tr>
                                                 <td><?php echo ++$no ?></td>

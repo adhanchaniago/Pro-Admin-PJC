@@ -114,11 +114,11 @@ error_reporting(0);
                                             $dataDetailPartys = $db->getAllDetailParty($id);
                                             foreach ($dataDetailPartys as $no => $dataDetailParty) :
                                                 // var_dump($dataDetailParty);
-                                                $JmlMuatTon     += $dataDetailParty->party_detail_ton_muat_pabrik;
-                                                $JmlBongkarUip  += $dataDetailParty->party_detail_ton_bongkar_uip;
-                                                $JmlSelisih     += $dataDetailParty->party_detail_selisih_ton;
-                                                $JmlTagihan     += $dataDetailParty->party_detail_jum_tagihan;
-                                                $JmlTotal       += $dataDetailParty->party_detail_total_tagihan;
+                                                @$JmlMuatTon     += $dataDetailParty->party_detail_ton_muat_pabrik;
+                                                @$JmlBongkarUip  += $dataDetailParty->party_detail_ton_bongkar_uip;
+                                                @$JmlSelisih     += $dataDetailParty->party_detail_selisih_ton;
+                                                @$JmlTagihan     += $dataDetailParty->party_detail_jum_tagihan;
+                                                @$JmlTotal       += $dataDetailParty->party_detail_total_tagihan;
                                             ?>
                                             <?php endforeach ?>
                                     <table border="0" style="font-family: Times New Roman; font-weight: bold">

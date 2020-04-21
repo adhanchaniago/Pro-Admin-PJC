@@ -53,13 +53,13 @@
                     </div> -->
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <a href="index.php?page=module/pupuk/tambah_detail&id=<?php echo $id ?>" class="btn btn-success mb-4">Tambah Data</a>
+                        <a href="index.php?page=module/pupuk/tambah_detail&id=<?php echo $id ?>" class="btn btn-success mb-4">Tambah Permintaan Muatan</a>
                         <a href="index.php?page=module/pupuk/index" class="btn btn-warning mb-4">Kembali</a>
-                        <a href="index.php?page=module/pupuk/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a>
                         <table id="example1" class="table-responsive table table-bordered table-striped">
                             <thead align="center">
                                 <tr>
                                     <th>No</th>
+                                    <th>Aksi</th>
                                     <th>No Polisi</th>
                                     <th>No SPB</th>
                                     <th>No SPPB</th>
@@ -79,23 +79,27 @@
                                     <th>Admin Office Fee</th>
                                     <th>Driver Deposito</th>
                                     <th>Total Tagihan</th>
-                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 $dataDetailPupuk = $db->getAllDetailPupuk($id);
                                 foreach ($dataDetailPupuk as $no => $data) :
-                                    $JmlMuatTon     += $data->pupuk_detail_ton_muat_pabrik;
-                                    $JmlBongkarUip  += $data->pupuk_detail_ton_bongkar_uip;
-                                    $JmlSelisih     += $data->pupuk_detail_selisih_ton;
-                                    $JmlTagihan     += $data->pupuk_detail_jum_tagihan;
-                                    $JmlTotal       += $data->pupuk_detail_total_tagihan;
-
-                                    // var_dump($data);
+                                    @$JmlMuatTon     += $data->pupuk_detail_ton_muat_pabrik;
+                                    @$JmlBongkarUip  += $data->pupuk_detail_ton_bongkar_uip;
+                                    @$JmlSelisih     += $data->pupuk_detail_selisih_ton;
+                                    @$JmlTagihan     += $data->pupuk_detail_jum_tagihan;
+                                    @$JmlTotal       += $data->pupuk_detail_total_tagihan;
                                 ?>
                                     <tr>
                                         <td width="5px"><?= ++$no ?></td>
+                                        <td width="160px">
+                                            <a href="index.php?page=module/pupuk/update_detail&id=<?= $data->pupuk_detail_id ?>&idParty=<?php echo $data->pupuk_id ?>" class="btn btn-sm btn-warning">Update</a>
+                                            <p class="mt-1 mb-1"></p>
+                                            <a target="blank" href="module/pupuk/cetakMuatan.php?id=<?= $data->pupuk_detail_id ?>" class="btn btn-sm btn-primary">Cetak Muatan</a>
+                                            <p class="mt-1 mb-1"></p>
+                                            <a href="index.php?page=module/pupuk/hapusDetail&idh=<?= $data->pupuk_detail_id ?>&id=<?php echo $id ?>" class="btn btn-sm btn-danger">Hapus</a>
+                                        </td>
                                         <td><?= $data->pupuk_detail_no_polisi ?></td>
                                         <td><?= $data->pupuk_detail_nospb ?></td>
                                         <td><?= $data->pupuk_detail_sppb ?></td>
@@ -116,15 +120,12 @@
                                         <td><?= rupiah($data->pupuk_detail_admin) ?></td>
                                         <td><?= rupiah($data->pupuk_detail_driver_deposito) ?></td>
                                         <td><?= rupiah($data->pupuk_detail_total_tagihan) ?></td>
-                                        <td width="160px">
-                                            <a href="index.php?page=module/pupuk/hapusDetail&idh=<?= $data->pupuk_detail_id ?>&id=<?php echo $id ?>" class="btn btn-sm btn-danger">Hapus</a>
-                                        </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th colspan="6">Total</th>
+                                    <!-- <th colspan="6">Total</th>
                                     <td><?php echo format_angka($JmlMuatTon) ?></td>
                                     <td></td>
                                     <td></td>
@@ -139,7 +140,7 @@
                                     <td></td>
                                     <td></td>
                                     <td><?php echo rupiah($JmlTotal) ?></td>
-                                    <td></td>
+                                    <td></td> -->
                                 </tr>
                             </tfoot>
                         </table>

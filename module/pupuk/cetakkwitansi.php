@@ -104,14 +104,14 @@ error_reporting(0);
                                     $dataDetailPupuk = $db->getAllDetailPupuk($id);
                                     foreach ($dataDetailPupuk as $no => $data) :
                                         // var_dump($dataDetailParty);
-                                        $tMuat      += $data->pupuk_detail_ton_muat_pabrik;
-                                        $zMuat      += $data->pupuk_detail_satuanmuat;
-                                        $nMuat      += $data->pupuk_detail_nettomuat;
-                                        $tBongkar   += $data->pupuk_detail_ton_bongkar_uip;
-                                        $zBongkar      += $data->pupuk_detail_satuanbongkar;
-                                        $nBongkar      += $data->pupuk_detail_nettobongkar;
-                                        $tSelisih   += $data->pupuk_detail_selisih_ton;
-                                        $tTotal   += $data->pupuk_detail_total_tagihan;
+                                        @$tMuat      += $data->pupuk_detail_ton_muat_pabrik;
+                                        @$zMuat      += $data->pupuk_detail_satuanmuat;
+                                        @$nMuat      += $data->pupuk_detail_nettomuat;
+                                        @$tBongkar   += $data->pupuk_detail_ton_bongkar_uip;
+                                        @$zBongkar      += $data->pupuk_detail_satuanbongkar;
+                                        @$nBongkar      += $data->pupuk_detail_nettobongkar;
+                                        @$tSelisih   += $data->pupuk_detail_selisih_ton;
+                                        @$tTotal   += $data->pupuk_detail_total_tagihan;
                                     ?>
                                     <?php endforeach ?>
                                     <table border="0" style="font-family: Times New Roman">

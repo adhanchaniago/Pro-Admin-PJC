@@ -130,11 +130,11 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
                                         $dataDetailPupuk = $db->getAllDetailPupuk($id);
                                         foreach ($dataDetailPupuk as $no => $data) :
                                             // var_dump($data);
-                                            $JmlMuatTon     += $data->pupuk_detail_ton_muat_pabrik;
-                                            $JmlBongkarUip  += $data->pupuk_detail_ton_bongkar_uip;
-                                            $JmlSelisih     += $data->pupuk_detail_selisih_ton;
-                                            $JmlTagihan     += $data->pupuk_detail_jum_tagihan;
-                                            $JmlTotal       += $data->pupuk_detail_total_tagihan;
+                                            @$JmlMuatTon     += $data->pupuk_detail_ton_muat_pabrik;
+                                            @$JmlBongkarUip  += $data->pupuk_detail_ton_bongkar_uip;
+                                            @$JmlSelisih     += $data->pupuk_detail_selisih_ton;
+                                            @$JmlTagihan     += $data->pupuk_detail_jum_tagihan;
+                                            @$JmlTotal       += $data->pupuk_detail_total_tagihan;
                                         ?>
                                         <?php endforeach ?>
                                         <td>Partai</td>

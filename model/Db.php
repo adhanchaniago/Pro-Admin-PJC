@@ -240,6 +240,43 @@ class Db extends Conn
         return $conn->query($query);
     }
 
+    public function saveDetailPupukMuat($data)
+    {
+
+        $idPupuk   = $data['idPupuk'];
+        $noPolisi  = $data['noPolisi'];
+        $namaSupir = $data['namaSupir'];
+        $noSim     = $data['noSim'];
+        $jenis     = $data['jenis'];
+        $berat     = $data['berat'];
+        $tujuan    = $data['tujuan'];
+        $noDo      = $data['noDo'];
+        $nokontrak = $data['nokontrak'];
+
+
+        global $conn;
+        $query = "INSERT INTO tb_pupuk_detail(  pupuk_id,
+                                                pupuk_detail_no_polisi,
+                                                pupuk_detail_nama_supir,
+                                                pupuk_detail_muat_no_sim,
+                                                pupuk_detail_muat_jenis,
+                                                pupuk_detail_do,
+                                                pupuk_detail_muat_berat,
+                                                pupuk_detail_muat_tujuan,
+                                                pupuk_detail_kontrak) 
+                                                VALUES (
+                                                    '$idPupuk',
+                                                    '$noPolisi',
+                                                    '$namaSupir',
+                                                    '$noSim',
+                                                    '$jenis',
+                                                    '$noDo',
+                                                    '$berat',
+                                                    '$tujuan',
+                                                    '$nokontrak'
+                                                    )";
+        return $conn->query($query);
+    }
     public function saveDetailPartyMuat($data)
     {
 
@@ -517,7 +554,8 @@ class Db extends Conn
         FROM tb_pupuk_detail 
         JOIN tb_pupuk 
         ON tb_pupuk_detail.pupuk_id=tb_pupuk.pupuk_id
-        JOIN tb_satuan_pupuk ON tb_pupuk_detail.pupuk_detail_jenis=tb_satuan_pupuk.satuan_id
+        -- JOIN tb_satuan_pupuk 
+        -- ON tb_pupuk_detail.pupuk_detail_jenis=tb_satuan_pupuk.satuan_id
         WHERE tb_pupuk_detail.pupuk_id = $id ");
         return $query;
     }

@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="index.php?page=module/pupuk/tambah" class="btn btn-success mb-4">Tambah Data</a>
+                        <a href="index.php?page=module/pupuk/tambah" class="btn btn-success mb-4">Tambah Data Party</a>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr align="center">
@@ -54,13 +54,16 @@
                                         <td><?= $data->pupuk_kontrak ?></td>
                                         <td><?= $data->pupuk_jenis ?></td>
                                         <td width="200px">
-                                            <a href="index.php?page=module/pupuk/tagihan&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-info">Tagihan</a>
-                                            <a href="index.php?page=module/pupuk/rekap&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-success">Rekap</a>
-                                            <a href="index.php?page=module/pupuk/detail&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-primary">Detail</a>
-                                            <p></p>
+                                            <a href="index.php?page=module/pupuk/tagihan&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-info">Invoice</a>
+                                            <a href="index.php?page=module/pupuk/invoice&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-success">Rekapitulasi</a>
+                                            <!-- <a href="index.php?page=module/pupuk/rekap&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-success">Rekap</a> -->
+
+                                            <p class="mt-1 mb-1"></p>
                                             <!-- <a href="index.php?page=module/pupuk/edit&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-warning">Edit</a> -->
                                             <a align='right' href="index.php?page=module/pupuk/hapus&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-danger">Hapus</a>
-                                            <!-- <a href="index.php?page=module/party/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a> -->
+                                            <a href="index.php?page=module/pupuk/detail&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-primary">Transporter</a>
+
+                                            <!-- <a href="index.php?page=module/pupuk/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
