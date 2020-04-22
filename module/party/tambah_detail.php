@@ -53,6 +53,7 @@
                                     <label class="col-sm-4 col-form-label">No. Polisi</label>
                                     <div class="col-sm-8">
                                         <input name="idParty" value="<?php echo $_GET['id'] ?>" type="hidden" class="form-control">
+
                                         <input name="noPolisi" type="text" class="form-control" placeholder="No. Polisi">
                                     </div>
                                 </div>

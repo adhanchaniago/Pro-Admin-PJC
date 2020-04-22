@@ -37,8 +37,9 @@ error_reporting(0);
                                         <p> <b>Jln. Sawahan No. 44 Padang-Sumbar</b> <br>
                                             Telp.(0751)27876, 7865000 Fax. (0751) 34395</p>
                                         <!-- <small class="float-right">Tanggal: <?php echo date('d/m/Y') ?></small> -->
-                                    </h4>
-                                    <br><br><br>
+                                        <b style="font-size: 45px">INVOICE</b>
+                                        </>
+                                        <br><br><br>
                                 </div>
                             </div>
                             <!-- info row -->
@@ -110,17 +111,17 @@ error_reporting(0);
                             <!-- /.row -->
                             <div class=" row">
                                 <div class="col-12 table-responsive">
-                                <?php
-                                            $dataDetailPartys = $db->getAllDetailParty($id);
-                                            foreach ($dataDetailPartys as $no => $dataDetailParty) :
-                                                // var_dump($dataDetailParty);
-                                                @$JmlMuatTon     += $dataDetailParty->party_detail_ton_muat_pabrik;
-                                                @$JmlBongkarUip  += $dataDetailParty->party_detail_ton_bongkar_uip;
-                                                @$JmlSelisih     += $dataDetailParty->party_detail_selisih_ton;
-                                                @$JmlTagihan     += $dataDetailParty->party_detail_jum_tagihan;
-                                                @$JmlTotal       += $dataDetailParty->party_detail_total_tagihan;
-                                            ?>
-                                            <?php endforeach ?>
+                                    <?php
+                                    $dataDetailPartys = $db->getAllDetailParty($id);
+                                    foreach ($dataDetailPartys as $no => $dataDetailParty) :
+                                        // var_dump($dataDetailParty);
+                                        @$JmlMuatTon     += $dataDetailParty->party_detail_ton_muat_pabrik;
+                                        @$JmlBongkarUip  += $dataDetailParty->party_detail_ton_bongkar_uip;
+                                        @$JmlSelisih     += $dataDetailParty->party_detail_selisih_ton;
+                                        @$JmlTagihan     += $dataDetailParty->party_detail_jum_tagihan;
+                                        @$JmlTotal       += $dataDetailParty->party_detail_total_tagihan;
+                                    ?>
+                                    <?php endforeach ?>
                                     <table border="0" style="font-family: Times New Roman; font-weight: bold">
                                         <tr>
                                             <td>Sudah Terima Dari</td>
@@ -140,7 +141,7 @@ error_reporting(0);
                                             <td>&emsp; Penagihan Ongkos Angkut Palm Karnel Tujuan <?php echo $dataParty->perusahaan_nama ?></Penagihan>
                                         </tr>
                                         <tr>
-                                          
+
                                             <td>Partai</td>
                                             <td>&emsp;:</td>
                                             <td>&emsp; <?php echo rupiah($JmlTotal) ?>

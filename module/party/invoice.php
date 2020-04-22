@@ -152,7 +152,7 @@
                                             <td><?php echo format_angka($dataDetailParty->party_detail_ton_muat_pabrik) ?></td>
                                             <td><?php echo tgl_indo($dataDetailParty->party_detail_tgl_bongkar_uip) ?></td>
                                             <td><?php echo format_angka($dataDetailParty->party_detail_ton_bongkar_uip) ?></td>
-                                            <td><?php echo $dataDetailParty->party_detail_selisih_ton ?></td>
+                                            <td><?php echo format_angka($dataDetailParty->party_detail_selisih_ton) ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>

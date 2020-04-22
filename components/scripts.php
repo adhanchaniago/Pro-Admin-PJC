@@ -48,3 +48,15 @@
         });
     });
 </script>
+
+<script src="assets/js/moment.js"></script>
+<script src="assets/js/pikaday.js"></script>
+<!-- <script>
+    var picker = new Pikaday({
+        field: document.getElementById('datepicker'),
+        format: 'D MMM YYYY',
+        onSelect: function() {
+            console.log(this.getMoment().format('Do MMMM YYYY'));
+        }
+    });
+</script> -->

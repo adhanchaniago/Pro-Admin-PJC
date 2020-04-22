@@ -10,7 +10,7 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
 <html>
 
 <head>
-    <title>Cetak Invoice</title>
+    <title>Cetak</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../../assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -65,40 +65,40 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-4 invoice-col">
-                            <table>
-                                <tr>
-                                    <td> <b>Invoice</b> </td>
-                                    <td><b>#</b></td>
-                                    <td><b><?php echo date('dmYhis') ?></b></td>
-                                </tr>
-                                <tr>
-                                    <td> <b>Tanggal</b> </td>
-                                    <td><b>:</b></td>
-                                    <td><b><?php echo date('d/m/Y') ?></b></td>
-                                </tr>
-                                <tr>
-                                    <td><b>No. Do</b></td>
-                                    <td><b>:</b></td>
-                                    <td><b><?php echo $dataParty->party_do ?></b></td>
-                                </tr> 
-                                <tr>
-                                    <td><b>No. Kontrak</b></td>
-                                    <td><b>:</b></td>
-                                    <td><b><?php echo $dataParty->party_nokontrak ?></b></td>
-                                </tr>
-                                <tr>
-                                    <td><b>No. SPK / STO</b></td>
-                                    <td><b>:</b></td>
-                                    <td><b><?php echo $dataParty->party_spk ?></b></td>
-                                </tr>
-                                
-                               
-                                <tr>
-                                    <td><b>No. PO</b></td>
-                                    <td><b>:</b></td>
-                                    <td><b><?php echo $dataParty->party_po ?></b></td>
-                                </tr>
-                            </table>
+                                <table>
+                                    <tr>
+                                        <td> <b>Invoice</b> </td>
+                                        <td><b>#</b></td>
+                                        <td><b><?php echo date('dmYhis') ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td> <b>Tanggal</b> </td>
+                                        <td><b>:</b></td>
+                                        <td><b><?php echo date('d/m/Y') ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>No. Do</b></td>
+                                        <td><b>:</b></td>
+                                        <td><b><?php echo $dataParty->party_do ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>No. Kontrak</b></td>
+                                        <td><b>:</b></td>
+                                        <td><b><?php echo $dataParty->party_nokontrak ?></b></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>No. SPK / STO</b></td>
+                                        <td><b>:</b></td>
+                                        <td><b><?php echo $dataParty->party_spk ?></b></td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td><b>No. PO</b></td>
+                                        <td><b>:</b></td>
+                                        <td><b><?php echo $dataParty->party_po ?></b></td>
+                                    </tr>
+                                </table>
                             </div>
                             <!-- /.col -->
                         </div>

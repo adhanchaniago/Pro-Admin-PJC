@@ -64,7 +64,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">Tgl Muat Pabrik</label>
                                     <div class="col-sm-8">
-                                        <input name="tglMuatPabrik" type="date" value="<?php echo date('Y-m-d') ?>" class="form-control">
+                                        <input name="tglMuatPabrik" type="date" placeholder="Tgl Muat Pabrik" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -94,7 +94,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-4 col-form-label">Tgl Bongkar UIP</label>
                                     <div class="col-sm-8">
-                                        <input name="tglBongkarUip" value="<?php echo date('Y-m-d') ?>" type="date" class="form-control">
+                                        <input name="tglBongkarUip" type="date" class="form-control">
                                     </div>
                                 </div>
                                 <div class="form-group row">

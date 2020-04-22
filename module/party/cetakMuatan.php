@@ -99,7 +99,7 @@ $dataMuat = $db->getOneDetailParty($id);
                                         <tr class=" mt-0 mb-0">
                                             <td>Berat</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_muat_berat ?></td>
+                                            <td> &emsp; <?= format_angka($dataMuat->party_detail_muat_berat) ?> Kg</td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Tujuan</td>

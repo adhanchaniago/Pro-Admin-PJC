@@ -8,7 +8,7 @@
                     $id = $_GET['id'];
                     $dataParty = $db->getOneParty($id);
                     ?>
-                    <h1 class="m-0 text-dark">Data Laporan Transporter </h1>
+                    <h1 class="m-0 text-dark">Data Laporan Transporter Palm Kernel</h1>
                     <table>
                         <tr>
                             <td><b>No. SPK / STO</b></td>
@@ -28,7 +28,7 @@
                         <tr>
                             <td><b>Tonase Kontrak</b></td>
                             <td><b>:</b></td>
-                            <td><b><?php echo format_angka($dataParty->party_kontrak) ?></b></td>
+                            <td><b><?php echo format_angka($dataParty->party_kontrak) ?> Kg</b></td>
                         </tr>
                     </table>
                 </div><!-- /.col -->
