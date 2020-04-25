@@ -23,7 +23,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <a href="index.php?page=module/pupuk/tambah" class="btn btn-success mb-4">Tambah Data Party</a>
+                        <a href="index.php?page=module/pupuk/tambah" class="btn btn-success mb-4">Tambah Data Pupuk</a>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
                                 <tr align="center">

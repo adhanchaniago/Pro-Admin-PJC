@@ -61,7 +61,6 @@
                                     <th>No</th>
                                     <th>Aksi</th>
                                     <th>No Polisi</th>
-                                    <th>No SPB</th>
                                     <th>No SPPB</th>
                                     <th>Jenis</th>
                                     <th>Tgl Muat Pabrik</th>
@@ -94,14 +93,13 @@
                                     <tr>
                                         <td width="5px"><?= ++$no ?></td>
                                         <td width="160px">
-                                            <a href="index.php?page=module/pupuk/update_detail&id=<?= $data->pupuk_detail_id ?>&idParty=<?php echo $data->pupuk_id ?>" class="btn btn-sm btn-warning">Update</a>
+                                            <a href="index.php?page=module/pupuk/update_detail&id=<?= $data->pupuk_detail_id ?>&idPupuk=<?php echo $data->pupuk_id ?>" class="btn btn-sm btn-warning">Update</a>
                                             <p class="mt-1 mb-1"></p>
                                             <a target="blank" href="module/pupuk/cetakMuatan.php?id=<?= $data->pupuk_detail_id ?>" class="btn btn-sm btn-primary">Cetak Muatan</a>
                                             <p class="mt-1 mb-1"></p>
                                             <a href="index.php?page=module/pupuk/hapusDetail&idh=<?= $data->pupuk_detail_id ?>&id=<?php echo $id ?>" class="btn btn-sm btn-danger">Hapus</a>
                                         </td>
                                         <td><?= $data->pupuk_detail_no_polisi ?></td>
-                                        <td><?= $data->pupuk_detail_nospb ?></td>
                                         <td><?= $data->pupuk_detail_sppb ?></td>
                                         <td><?= $data->satuan_nama ?></td>
                                         <td><?= tgl_indo($data->pupuk_detail_tgl_muat_pabrik) ?></td>

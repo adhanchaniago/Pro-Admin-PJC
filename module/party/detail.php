@@ -63,7 +63,6 @@
                                     <th>No Polisi</th>
                                     <th>Tgl Muat Pabrik</th>
                                     <th>No D/O</th>
-                                    <!-- <th>No Kontrak</th> -->
                                     <th>No SPPB</th>
                                     <th>Tonase Muat Parbrik</th>
                                     <th>Tgl Bongkar UIP</th>
