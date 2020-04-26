@@ -2,8 +2,9 @@
 $id = $_GET['id'];
 include '../../model/Db.php';
 $db = new Db();
-$dataMuat = $db->getOneDetailParty($id);
-// var_dump($db->getOneDetailParty($id));
+$dataMuat = $db->getOneDetailPupuk($id);
+// error_reporting(0);
+// var_dump($db->getOneDetailpupuk($id));
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,44 +78,44 @@ $dataMuat = $db->getOneDetailParty($id);
                                         <tr class=" mt-0 mb-0">
                                             <td>Nomor Polisi</td>
                                             <td>&emsp;:</td>
-                                            <td>&emsp; <?php echo $dataMuat->party_detail_no_polisi ?></td>
+                                            <td>&emsp; <?php echo $dataMuat->pupuk_detail_no_polisi ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Nama Sopir</td>
                                             <td>&emsp;:</td>
                                             <td>
-                                                &emsp; <?= $dataMuat->party_detail_nama_supir ?>
+                                                &emsp; <?= $dataMuat->pupuk_detail_nama_supir ?>
                                             </td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Nomor SIM</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_muat_no_sim ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_muat_no_sim ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Jenis Barang</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_muat_jenis ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_muat_jenis ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Berat</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_muat_berat ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_muat_berat ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Tujuan</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_muat_tujuan ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_muat_tujuan ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Nomor DO</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_do ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_do ?></td>
                                         </tr>
                                         <tr class=" mt-0 mb-0">
                                             <td>Nomor Kontrak</td>
                                             <td>&emsp;:</td>
-                                            <td> &emsp; <?= $dataMuat->party_detail_kontrak ?></td>
+                                            <td> &emsp; <?= $dataMuat->pupuk_detail_kontrak ?></td>
                                         </tr>
                                     </table>
                                 </div>

@@ -334,6 +334,17 @@ class Db extends Conn
                             WHERE tb_party_detail.party_detail_id = '$id'")[0];
         return $query;
     }
+    public function getOneDetailPupuk($id)
+    {
+        $query = $this->get("SELECT * 
+                            FROM tb_pupuk_detail 
+                            JOIN tb_pupuk
+                            ON tb_pupuk_detail.pupuk_id = tb_pupuk.pupuk_id
+                            JOIN tb_perusahaan
+                            ON tb_perusahaan.perusahaan_id = tb_pupuk.perusahaan_id
+                            WHERE tb_pupuk_detail.pupuk_detail_id = '$id'")[0];
+        return $query;
+    }
     // public function editAdmin($data)
     // {
     //     global $conn;
@@ -472,28 +483,7 @@ class Db extends Conn
                             ")[0];
         return $query;
     }
-    // public function editPupuk($data)
-    // {
-    //     global $conn;
 
-    //     $id         = $data['id'];
-    //     $perusahaan = $data['perusahaan'];
-    //     $spk        = $data['spk'];
-    //     $do         = $data['do'];
-    //     $po         = $data['po'];
-    //     $nokontrak  = $data['nokontrak'];
-    //     $kontrak    = $data['kontrak'];
-
-    //     $query    = "UPDATE tb_party SET    perusahaan_id   = '$perusahaan',
-    //                                         party_spk       = '$spk',
-    //                                         party_do        = '$do',
-    //                                         party_po        = '$po',
-    //                                         party_nokontrak = '$nokontrak',
-    //                                         party_kontrak   = '$kontrak'
-    //                                         WHERE
-    //                                         party_id = '$id'";
-    //     return $conn->query($query);
-    // }
     public function getAllSatuan()
     {
         $query = $this->get("SELECT * 
@@ -502,61 +492,57 @@ class Db extends Conn
     }
     public function saveDetailPupuk($data)
     {
-
-        $idPupuk            = $data['idPupuk'];
-        $noPolisi           = $data['noPolisi'];
-        $noSpb              = $data['noSpb'];
-        $noSppb             = $data['noSppb'];
-        $jenisSatuan        = $data['jenisSatuan'];
-        $tglMuatPabrik      = $data['tglMuatPabrik'];
-        $tonaseMuatPabrik   = $data['tonaseMuatPabrik'];
-        $satuanMuat         = $data['satuanMuat'];
-        $nettoMuat          = $data['nettoMuat'];
-        $tglBongkarUip      = $data['tglBongkarUip'];
-        $tonaseBongkarUip   = $data['tonaseBongkarUip'];
-        $satuanBongkar      = $data['satuanBongkar'];
-        $nettoBongkar       = $data['nettoBongkar'];
-        $selisih            = $data['selisih'];
-        $namaSupir           = $data['namaSupir'];
-        $upah               = $data['upah'];
-        $jumlahTagihan      = $data['jumlahTagihan'];
-        $adminOfficeFee     = $data['adminOfficeFee'];
-        $driverDeposito     = $data['driverDeposito'];
-        $totalTagihan       = $data['totalTagihan'];
+        $idPupuk          = $data['idPupuk'];
+        $idDetail         = $data['idDetail'];
+        $noSppb           = $data['noSppb'];
+        $jenisSatuan      = $data['jenisSatuan'];
+        $tglMuatPabrik    = $data['tglMuatPabrik'];
+        $tonaseMuatPabrik = $data['tonaseMuatPabrik'];
+        $satuanMuat       = $data['satuanMuat'];
+        $nettoMuat        = $data['nettoMuat'];
+        $tglBongkarUip    = $data['tglBongkarUip'];
+        $tonaseBongkarUip = $data['tonaseBongkarUip'];
+        $satuanBongkar    = $data['satuanBongkar'];
+        $nettoBongkar     = $data['nettoBongkar'];
+        $selisih          = $data['selisih'];
+        $upah             = $data['upah'];
+        $jumlahTagihan    = $data['jumlahTagihan'];
+        $adminOfficeFee   = $data['adminOfficeFee'];
+        $driverDeposito   = $data['driverDeposito'];
+        $nagari           = $data['nagari'];
+        $totalTagihan     = $data['totalTagihan'];
 
         global $conn;
-        $query = "INSERT INTO `tb_pupuk_detail`(`pupuk_id`, `pupuk_detail_no_polisi`, `pupuk_detail_nospb`, `pupuk_detail_sppb`, `pupuk_detail_jenis`, `pupuk_detail_tgl_muat_pabrik`, `pupuk_detail_ton_muat_pabrik`, `pupuk_detail_satuanmuat`, `pupuk_detail_nettomuat`, `pupuk_detail_tgl_bongkar_uip`, `pupuk_detail_ton_bongkar_uip`, `pupuk_detail_satuanbongkar`, `pupuk_detail_nettobongkar`, `pupuk_detail_selisih_ton`, `pupuk_detail_nama_supir`, `pupuk_detail_upah_kg`, `pupuk_detail_jum_tagihan`, `pupuk_detail_admin`, `pupuk_detail_driver_deposito`, `pupuk_detail_total_tagihan`) VALUES (
-                                                    '$idPupuk',
-                                                    '$noPolisi',
-                                                    '$noSpb ',
-                                                    '$noSppb',
-                                                    '$jenisSatuan',
-                                                    '$tglMuatPabrik',
-                                                    '$tonaseMuatPabrik',
-                                                    '$satuanMuat ',
-                                                    '$nettoMuat ',
-                                                    '$tglBongkarUip',
-                                                    '$tonaseBongkarUip',
-                                                    '$satuanBongkar ',
-                                                    '$nettoBongkar ',
-                                                    '$selisih',
-                                                    '$namaSupir',
-                                                    '$upah',
-                                                    '$jumlahTagihan',
-                                                    '$adminOfficeFee',
-                                                    '$driverDeposito',
-                                                    '$totalTagihan')";
+        $query = "  UPDATE `tb_pupuk_detail` 
+                    SET `pupuk_id`='$idPupuk',
+                        `pupuk_detail_sppb`='$noSppb',
+                        `pupuk_detail_jenis`='$jenisSatuan',
+                        `pupuk_detail_tgl_muat_pabrik`='$tglMuatPabrik',
+                        `pupuk_detail_ton_muat_pabrik`='$tonaseMuatPabrik',
+                        `pupuk_detail_satuanmuat`='$satuanMuat',
+                        `pupuk_detail_nettomuat`='$nettoMuat',
+                        `pupuk_detail_tgl_bongkar_uip`='$tglBongkarUip',
+                        `pupuk_detail_ton_bongkar_uip`='$tonaseBongkarUip',
+                        `pupuk_detail_satuanbongkar`='$satuanBongkar',
+                        `pupuk_detail_nettobongkar`='$nettoBongkar',
+                        `pupuk_detail_selisih_ton`='$selisih',
+                        `pupuk_detail_upah_kg`='$upah',
+                        `pupuk_detail_jum_tagihan`='$jumlahTagihan',
+                        `pupuk_detail_admin`='$adminOfficeFee',
+                        `pupuk_detail_driver_deposito`='$driverDeposito',
+                        `pupuk_detail_nagari`='$nagari',
+                        `pupuk_detail_total_tagihan`='$totalTagihan' WHERE 
+                        `pupuk_detail_id`='$idDetail'
+                    ";
         return $conn->query($query);
     }
     public function getAllDetailPupuk($id)
     {
-        $query = $this->get("  SELECT * 
-        FROM tb_pupuk_detail 
-        JOIN tb_pupuk 
-        ON tb_pupuk_detail.pupuk_id=tb_pupuk.pupuk_id
-        -- JOIN tb_satuan_pupuk 
-        -- ON tb_pupuk_detail.pupuk_detail_jenis=tb_satuan_pupuk.satuan_id
-        WHERE tb_pupuk_detail.pupuk_id = $id ");
+        $query = $this->get("   SELECT * 
+                                FROM tb_pupuk_detail 
+                                JOIN tb_pupuk 
+                                ON tb_pupuk_detail.pupuk_id=tb_pupuk.pupuk_id
+                                WHERE tb_pupuk_detail.pupuk_id = $id ");
         return $query;
     }
     public function deleteDetailPupuk($id)

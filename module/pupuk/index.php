@@ -51,7 +51,7 @@
                                         <td><?= $data->pupuk_do ?></td>
                                         <td><?= $data->pupuk_po ?></td>
                                         <td><?= $data->pupuk_nokontrak ?></td>
-                                        <td><?= $data->pupuk_kontrak ?></td>
+                                        <td><?= format_angka($data->pupuk_kontrak) ?></td>
                                         <td><?= $data->pupuk_jenis ?></td>
                                         <td width="200px">
                                             <a href="index.php?page=module/pupuk/tagihan&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-info">Invoice</a>
