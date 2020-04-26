@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Apr 2020 pada 04.28
+-- Waktu pembuatan: 26 Apr 2020 pada 22.10
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -103,7 +103,7 @@ CREATE TABLE `tb_party_detail` (
 
 INSERT INTO `tb_party_detail` (`party_detail_id`, `party_id`, `party_detail_muat_no_sim`, `party_detail_muat_jenis`, `party_detail_muat_berat`, `party_detail_muat_tujuan`, `party_detail_no_polisi`, `party_detail_tgl_muat_pabrik`, `party_detail_do`, `party_detail_kontrak`, `party_detail_sppb`, `party_detail_ton_muat_pabrik`, `party_detail_tgl_bongkar_uip`, `party_detail_ton_bongkar_uip`, `party_detail_selisih_ton`, `party_detail_nama_supir`, `party_detail_upah_kg`, `party_detail_jum_tagihan`, `party_detail_admin`, `party_detail_driver_deposito`, `party_detail_nagari`, `party_detail_total_tagihan`) VALUES
 (31, 12, 'Aliquip aut minima i', 'Esse cupidatat reic', '42', 'Saepe sapiente tempo', 'Et ut animi ut solu', '2020-04-18', 'Nemo et illum lorem', 'Officia aut ex dolor', 2131, 80000, '2020-04-18', 19923, 60077, 'Eveniet id quos des', 2400, 47815200, 1000000, 1000000, 5000, 45810200),
-(32, 12, 'In ratione labore su', 'Sed repellendus Ven', '36', 'Dolores quia proiden', 'Placeat et sit volu', '2020-04-18', 'Quis quis aliquip a ', 'Magnam lorem qui ill', 23123, 123123, '2020-04-18', 1231332, 1108209, 'Quo tempor ut dolori', 24, 29551968, 23123, 3221123, 5000, 26302722);
+(32, 12, 'In ratione labore su', 'Sed repellendus Ven', '36', 'Dolores quia proiden', 'Placeat et sit volu', '2020-04-23', 'Quis quis aliquip a ', 'Magnam lorem qui ill', 1231, 123213, '2020-04-23', 123, 123090, 'Quo tempor ut dolori', 23221, 2856183, 123, 123, 5000, 2850937);
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ CREATE TABLE `tb_pupuk` (
 --
 
 INSERT INTO `tb_pupuk` (`pupuk_id`, `perusahaan_id`, `pupuk_spk`, `pupuk_do`, `pupuk_po`, `pupuk_nokontrak`, `pupuk_kontrak`, `pupuk_jenis`) VALUES
-(1, 7, 'qwerty', 'asd', 'qwe', '123sdf', 7000, 'urea');
+(5, 8, 'SP00123213', 'DO12312321', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 400000, 'Urea');
 
 -- --------------------------------------------------------
 
@@ -202,6 +202,7 @@ CREATE TABLE `tb_pupuk_detail` (
   `pupuk_detail_jum_tagihan` int(11) DEFAULT NULL,
   `pupuk_detail_admin` int(11) DEFAULT NULL,
   `pupuk_detail_driver_deposito` int(11) DEFAULT NULL,
+  `pupuk_detail_nagari` int(11) DEFAULT NULL,
   `pupuk_detail_total_tagihan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -209,9 +210,9 @@ CREATE TABLE `tb_pupuk_detail` (
 -- Dumping data untuk tabel `tb_pupuk_detail`
 --
 
-INSERT INTO `tb_pupuk_detail` (`pupuk_detail_id`, `pupuk_id`, `pupuk_detail_muat_no_sim`, `pupuk_detail_muat_jenis`, `pupuk_detail_muat_berat`, `pupuk_detail_muat_tujuan`, `pupuk_detail_no_polisi`, `pupuk_detail_do`, `pupuk_detail_kontrak`, `pupuk_detail_sppb`, `pupuk_detail_jenis`, `pupuk_detail_tgl_muat_pabrik`, `pupuk_detail_ton_muat_pabrik`, `pupuk_detail_satuanmuat`, `pupuk_detail_nettomuat`, `pupuk_detail_tgl_bongkar_uip`, `pupuk_detail_ton_bongkar_uip`, `pupuk_detail_satuanbongkar`, `pupuk_detail_nettobongkar`, `pupuk_detail_selisih_ton`, `pupuk_detail_nama_supir`, `pupuk_detail_upah_kg`, `pupuk_detail_jum_tagihan`, `pupuk_detail_admin`, `pupuk_detail_driver_deposito`, `pupuk_detail_total_tagihan`) VALUES
-(5, 1, '123123', 'Explicabo Dolor inv', '1231', 'Padang', 'BA 2 SE', '123', '013/SPK/BBIP/-UIP/II/20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Egova', NULL, NULL, NULL, NULL, NULL),
-(6, 1, '123123', 'Explicabo Dolor inv', '1231', 'Padang', 'BA 2 SE', '123', '013/SPK/BBIP/-UIP/II/20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Egova', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `tb_pupuk_detail` (`pupuk_detail_id`, `pupuk_id`, `pupuk_detail_muat_no_sim`, `pupuk_detail_muat_jenis`, `pupuk_detail_muat_berat`, `pupuk_detail_muat_tujuan`, `pupuk_detail_no_polisi`, `pupuk_detail_do`, `pupuk_detail_kontrak`, `pupuk_detail_sppb`, `pupuk_detail_jenis`, `pupuk_detail_tgl_muat_pabrik`, `pupuk_detail_ton_muat_pabrik`, `pupuk_detail_satuanmuat`, `pupuk_detail_nettomuat`, `pupuk_detail_tgl_bongkar_uip`, `pupuk_detail_ton_bongkar_uip`, `pupuk_detail_satuanbongkar`, `pupuk_detail_nettobongkar`, `pupuk_detail_selisih_ton`, `pupuk_detail_nama_supir`, `pupuk_detail_upah_kg`, `pupuk_detail_jum_tagihan`, `pupuk_detail_admin`, `pupuk_detail_driver_deposito`, `pupuk_detail_nagari`, `pupuk_detail_total_tagihan`) VALUES
+(8, 5, '151011516152', 'Pupuk', '500', 'Padang', 'BA 2 SE', 'UIPD0017820', '013/SPK/BBIP/-UIP/II/20', 123, 'ZAK', '1996-08-13', 10000, 200, 9000, '1998-08-13', 9999, 200, 123, 1, 'Egova', 24, 239976, 90, 90, 90, 239706),
+(10, 5, '151011516152', 'Pupuk', '500', 'Padang', 'BA 2 SE', 'UIPD0017820', '013/SPK/BBIP/-UIP/II/20', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Egova', NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -323,13 +324,13 @@ ALTER TABLE `tb_perusahaan`
 -- AUTO_INCREMENT untuk tabel `tb_pupuk`
 --
 ALTER TABLE `tb_pupuk`
-  MODIFY `pupuk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pupuk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pupuk_detail`
 --
 ALTER TABLE `tb_pupuk_detail`
-  MODIFY `pupuk_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `pupuk_detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_satuan_pupuk`
