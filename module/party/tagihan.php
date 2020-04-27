@@ -116,19 +116,12 @@
                                 <tr>
                                     <td>Sudah Terima Dari</td>
                                     <td>&emsp;:</td>
-                                    <td>&emsp; <?php echo $dataParty->perusahaan_nama ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Alamat</td>
-                                    <td>&emsp;:</td>
-                                    <td>
-                                        &emsp; <?= $dataParty->perusahaan_alamat ?>
-                                    </td>
+                                    <td>&emsp; <?php echo $dataParty->party_diterima ?></td>
                                 </tr>
                                 <tr>
                                     <td>Untuk Pembayaran</td>
                                     <td>&emsp;:</td>
-                                    <td>&emsp; Penagihan Ongkos Angkut Palm Karnel Tujuan <?php echo $dataParty->perusahaan_nama ?></Penagihan>
+                                    <td>&emsp; Penagihan Ongkos Angkut Palm Karnel Tujuan <?php echo $dataParty->party_tujuan ?></td>
                                 </tr>
                                 <tr>
 

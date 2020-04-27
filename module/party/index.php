@@ -34,6 +34,8 @@
                                 <tr align="center">
                                     <th>No</th>
                                     <th>Nama Perusahaan</th>
+                                    <th>Tujuan</th>
+                                    <th>Diterima</th>
                                     <th>No SPK / STO</th>
                                     <th>No DO</th>
                                     <th>No PO</th>
@@ -51,6 +53,8 @@
                                     <tr>
                                         <td width="5px"><?= ++$no ?></td>
                                         <td><?= $dataParty->perusahaan_nama ?></td>
+                                        <td><?= $dataParty->party_tujuan ?></td>
+                                        <td><?= $dataParty->party_diterima ?></td>
                                         <td><?= $dataParty->party_spk ?></td>
                                         <td><?= $dataParty->party_do ?></td>
                                         <td><?= $dataParty->party_po ?></td>

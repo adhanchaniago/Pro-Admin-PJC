@@ -121,6 +121,8 @@ class Db extends Conn
     public function saveParty($data)
     {
         $perusahaan = $data['perusahaan'];
+        $diterima   = $data['diterima'];
+        $tujuan     = $data['tujuan'];
         $spk        = $data['spk'];
         $do         = $data['do'];
         $po         = $data['po'];
@@ -129,6 +131,8 @@ class Db extends Conn
 
         global $conn;
         $query = "INSERT INTO tb_party (    perusahaan_id,
+                                            party_diterima,
+                                            party_tujuan,
                                             party_spk,
                                             party_do,
                                             party_po,
@@ -136,6 +140,8 @@ class Db extends Conn
                                             party_kontrak) 
                                             VALUES (
                                                 '$perusahaan',
+                                                '$diterima',
+                                                '$tujuan',
                                                 '$spk',
                                                 '$do',
                                                 '$po',

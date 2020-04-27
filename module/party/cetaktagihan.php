@@ -126,19 +126,12 @@ error_reporting(0);
                                         <tr>
                                             <td>Sudah Terima Dari</td>
                                             <td>&emsp;:</td>
-                                            <td>&emsp; <?php echo $dataParty->perusahaan_nama ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alamat</td>
-                                            <td>&emsp;:</td>
-                                            <td>
-                                                &emsp; <?= $dataParty->perusahaan_alamat ?>
-                                            </td>
+                                            <td>&emsp; <?php echo $dataParty->party_diterima ?></td>
                                         </tr>
                                         <tr>
                                             <td>Untuk Pembayaran</td>
                                             <td>&emsp;:</td>
-                                            <td>&emsp; Penagihan Ongkos Angkut Palm Karnel Tujuan <?php echo $dataParty->perusahaan_nama ?></Penagihan>
+                                            <td>&emsp; Penagihan Ongkos Angkut Palm Karnel Tujuan <?php echo $dataParty->party_tujuan ?></td>
                                         </tr>
                                         <tr>
 
@@ -188,8 +181,8 @@ error_reporting(0);
                                         <td style="font-size: 18px; font-family: Times New Roman">
                                             <h5>&emsp; Note : </h5>
                                             <h5>&emsp; Mohon Di Transfer Ke Rekening : </h5> <b>&emsp; A/n. Alman Hamid,
-                                                No. Rek : 111-0005168717 &emsp;<br>&emsp;
-                                                Bank Mandiri &emsp; <br>&emsp;
+                                                No. Rek : 0058-01002827304 &emsp;<br>&emsp;
+                                                Bank Rakyat Indonesia (BRI) &emsp; <br>&emsp;
                                                 Cabang Padang &emsp;
                                             </b>
                                         </td>
