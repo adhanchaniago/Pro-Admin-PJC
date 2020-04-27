@@ -34,7 +34,8 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
                         <div class="row">
                             <div class="col-12">
                                 <h4>
-                                    <i class="fas fa-globe"></i> <i><?= $data['pengirim_nama'] ?></i>
+                                    <i class="fas fa-globe"></i>
+                                    <i id="titles">PT. Permata Jasa Century</i>
                                     <!-- <small class="float-right">Tanggal: <?php echo date('d/m/Y') ?></small> -->
                                 </h4>
                             </div>
@@ -45,8 +46,8 @@ $data = $conn->query("SELECT * FROM tb_pengirim WHERE pengirim_id='$_GET[pengiri
                             <div class="col-sm-4 invoice-col">
                                 From
                                 <address>
-                                    <strong><?= $data['pengirim_nama'] ?></strong><br>
-                                    <p><?= $data['pengirim_alamat'] ?></p>
+                                    <strong id="title">PT. Permata Jasa Century</strong><br>
+                                    <p id="alamat">Jln. Sawahan No. 44 RT 002 RW 005 Kel. Sawahan, Kec Padang Timur Kota Padang - Sumatera Barat</p>
                                 </address>
                             </div>
                             <!-- /.col -->

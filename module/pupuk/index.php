@@ -29,6 +29,8 @@
                                 <tr align="center">
                                     <th>No</th>
                                     <th>Nama Perusahaan</th>
+                                    <th>Tujuan</th>
+                                    <th>DiTerima</th>
                                     <th>No SPK / STO</th>
                                     <th>No DO</th>
                                     <th>No PO</th>
@@ -47,6 +49,8 @@
                                     <tr>
                                         <td width="5px"><?= ++$no ?></td>
                                         <td><?= $data->perusahaan_nama ?></td>
+                                        <td><?= $data->pupuk_diterima ?></td>
+                                        <td><?= $data->pupuk_tujuan ?></td>
                                         <td><?= $data->pupuk_spk ?></td>
                                         <td><?= $data->pupuk_do ?></td>
                                         <td><?= $data->pupuk_po ?></td>
@@ -59,11 +63,12 @@
                                             <!-- <a href="index.php?page=module/pupuk/rekap&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-success">Rekap</a> -->
 
                                             <p class="mt-1 mb-1"></p>
-                                            <!-- <a href="index.php?page=module/pupuk/edit&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-warning">Edit</a> -->
-                                            <a align='right' href="index.php?page=module/pupuk/hapus&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-danger">Hapus</a>
                                             <a href="index.php?page=module/pupuk/detail&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-primary">Transporter</a>
 
-                                            <!-- <a href="index.php?page=module/pupuk/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a> -->
+                                            <p class="mt-1 mb-1"></p>
+                                            <a href="index.php?page=module/pupuk/edit&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a align='right' href="index.php?page=module/pupuk/hapus&id=<?= $data->pupuk_id ?>" class="btn btn-sm btn-danger">Hapus</a>
+
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

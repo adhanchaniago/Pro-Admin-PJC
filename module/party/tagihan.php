@@ -30,8 +30,7 @@
                         <div class="col-6 text-left">
                             <h4> <b>PT. Permata Jasa Century</b> </>
                             </h4>
-                            <p> <b>Jln. Sawahan No. 44 Padang-Sumbar</b> <br>
-                                Telp.(0751)27876, 7865000 Fax. (0751) 34395</p>
+                            <p>Jln. Sawahan No. 44 RT 002 RW 005 Kel. Sawahan, Kec Padang Timur Kota Padang - Sumatera Barat</p>
                         </div>
                     </div>
                     <!-- info row -->

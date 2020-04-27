@@ -192,6 +192,34 @@ class Db extends Conn
         return $conn->query($query);
     }
 
+    public function editPupuk($data)
+    {
+        global $conn;
+
+        $idPupuk    = $data['idPupuk'];
+        $perusahaan = $data['perusahaan'];
+        $diterima   = $data['diterima'];
+        $tujuan     = $data['tujuan'];
+        $spk        = $data['spk'];
+        $do         = $data['do'];
+        $po         = $data['po'];
+        $nokontrak  = $data['nokontrak'];
+        $kontrak    = $data['kontrak'];
+
+        $query    = "UPDATE tb_pupuk SET    perusahaan_id   = '$perusahaan',
+                                            pupuk_diterima  = '$diterima',
+                                            pupuk_tujuan    = '$tujuan',
+                                            pupuk_spk       = '$spk',
+                                            pupuk_do        = '$do',
+                                            pupuk_po        = '$po',
+                                            pupuk_nokontrak = '$nokontrak',
+                                            pupuk_kontrak   = '$kontrak'
+                                            WHERE
+                                            pupuk_id = '$idPupuk'";
+        return $conn->query($query);
+    }
+
+
     // Party CRUD
     public function getAllDetailParty($id)
     {
@@ -467,15 +495,28 @@ class Db extends Conn
     public function savePupuk($data)
     {
         $perusahaan = $data['perusahaan'];
+        $diterima   = $data['diterima'];
+        $tujuan     = $data['tujuan'];
         $spk        = $data['spk'];
         $do         = $data['do'];
         $po         = $data['po'];
         $nokontrak  = $data['nokontrak'];
         $kontrak    = $data['kontrak'];
-        $jenisPupuk    = $data['jenisPupuk'];
+        $jenisPupuk = $data['jenisPupuk'];
 
         global $conn;
-        $query = "INSERT INTO `tb_pupuk`(`perusahaan_id`, `pupuk_spk`, `pupuk_do`, `pupuk_po`, `pupuk_nokontrak`, `pupuk_kontrak`,`pupuk_jenis`) VALUES ('$perusahaan',
+        $query = "INSERT INTO `tb_pupuk`(   `perusahaan_id`, 
+                                            `pupuk_diterima`, 
+                                            `pupuk_tujuan`, 
+                                            `pupuk_spk`, 
+                                            `pupuk_do`, 
+                                            `pupuk_po`, 
+                                            `pupuk_nokontrak`, 
+                                            `pupuk_kontrak`,
+                                            `pupuk_jenis`) VALUES (
+                                                '$perusahaan',
+                                                '$diterima',
+                                                '$tujuan',
                                                 '$spk',
                                                 '$do',
                                                 '$po',

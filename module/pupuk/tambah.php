@@ -64,6 +64,18 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Diterima</label>
+                                <div class="col-sm-9">
+                                    <input name="diterima" type="text" class="form-control" placeholder="Diterima">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Tujuan</label>
+                                <div class="col-sm-9">
+                                    <input name="tujuan" type="text" class="form-control" placeholder="Tujuan">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">No. SPK / STO</label>
                                 <div class="col-sm-9">
                                     <input name="spk" type="text" class="form-control" placeholder="No. SPK / STO">

@@ -63,13 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Telp</label>
                                     <div class="col-sm-10">
-                                        <input value="<?php echo $data->perusahaan_telp ?>" name="telp" type="text" class="form-control" placeholder="Password">
+                                        <input value="<?php echo $data->perusahaan_telp ?>" name="telp" type="text" class="form-control" placeholder="Telp">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label">Alamat</label>
                                     <div class="col-sm-10">
-                                        <input value="<?php echo $data->perusahaan_alamat ?>" name="alamat" type="text" class="form-control" placeholder="Nama">
+                                        <input value="<?php echo $data->perusahaan_alamat ?>" name="alamat" type="text" class="form-control" placeholder="Alamat">
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@
                     <h5><i class="fas fa-info"></i> Note:</h5>
                     Halaman ini bisa di cetak. Klik tombol print di bawah halaman.
                 </div>
-                <div class="row">
+                <!-- <div class="row">
                     <div class="col-md-4">
                         <select name="perusahaan" class="form-control" id="pengirim_id">
                             <option value="0">Pilih</option>
@@ -35,7 +35,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                </div>
+                </div> -->
                 <br>
                 <!-- Main content -->
                 <div class="invoice p-3 mb-3">
@@ -44,7 +44,7 @@
                         <div class="col-12">
                             <h4>
                                 <i class="fas fa-globe"></i>
-                                <i id="titles"></i>
+                                <i id="titles">PT. Permata Jasa Century</i>
                                 <!-- <small class="float-right">Tanggal: <?php echo date('d/m/Y') ?></small> -->
                             </h4>
                         </div>
@@ -53,12 +53,10 @@
                     <!-- info row -->
                     <div class="row invoice-info">
                         <div class="col-sm-4 invoice-col">
-                            <?php
-                            ?>
                             From
                             <address>
-                                <strong id="title"></strong><br>
-                                <p id="alamat"></p>
+                                <strong id="title">PT. Permata Jasa Century</strong><br>
+                                <p id="alamat">Jln. Sawahan No. 44 RT 002 RW 005 Kel. Sawahan, Kec Padang Timur Kota Padang - Sumatera Barat</p>
                             </address>
                         </div>
                         <!-- /.col -->

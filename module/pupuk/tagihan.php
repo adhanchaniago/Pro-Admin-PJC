@@ -30,8 +30,7 @@
                         <div class="col-6 text-left">
                             <h4> <b>CV. Asia Mega</b> </>
                             </h4>
-                            <p> <b>Jln. Padang Barat Utara Timur</b> <br>
-                                Telp.(0751)27876, 7865000 Fax. (0751) 34395</p>
+                            <p> <b>Jln. Sawahan No. 44 RT 002 RW 005 Kel. Sawahan, Kec Padang Timur Kota Padang - Sumatera Barat</b> <br> Telp.(0751)27876, 7865000 Fax. (0751) 34395</p>
                         </div>
                     </div>
                     <!-- info row -->
