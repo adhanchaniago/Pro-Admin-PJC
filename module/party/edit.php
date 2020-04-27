@@ -22,105 +22,103 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 ?>
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Data Palm Karnel</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-sm-12">
+                    <br><br>
+                    <h1 align=center style="font-family:Tahoma;" class="m-0 text-dark"> <strong>DATA PALM KARNEL</strong> </h1>
+                </div>
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                         <li class="breadcrumb-item active">Data Palm Karnel</li>
                     </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.content-header -->
-    <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-7">
+            <div class="col-md-2"></div>
+            <div class="col-8">
                 <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">Edit Data</h3>
+                        <h3 class="card-title">Tambah Data</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
-                    <?php foreach ($dataParty as $dataPerRow) : ?>
                     <form method="POST" class="form-horizontal">
                         <div class="card-body">
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Nama Perusahaan</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_id ?>" name="id" type="hidden">
-                                    <select name="perusahaan" class="form-control" required>
-                                        <option value="<?php echo $dataPerRow->perusahaan_id ?>">Pilih</option>
+                                <label class="col-sm-3 col-form-label">Nama Perusahaan</label>
+                                <div class="col-sm-9">
+                                    <select id="perusahaan" name="perusahaan" class="form-control">
+                                        <option value="0">Pilih</option>
                                         <?php
                                         $dataPerusahaans = $db->getAllPerusahaan();
                                         foreach ($dataPerusahaans as $dataPerusahaan) :
                                         ?>
-                                        <option value="<?php echo $dataPerusahaan->perusahaan_id ?>">
-                                            <?php echo $dataPerusahaan->perusahaan_nama ?></option>
+                                            <option value="<?php echo $dataPerusahaan->perusahaan_id ?>"><?php echo $dataPerusahaan->perusahaan_nama ?></option>
                                         <?php endforeach ?>
                                     </select>
-                                    <p> <i>&nbsp; kososngkan jika tidak ingin mengganti</i> </p>
+                                    <script>
+                                        document.getElementById('perusahaan').value = <?php echo $dataParty->perusahaan_id ?>
+                                    </script>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">No. SPK / STO</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_spk ?>" name="spk" type="text"
-                                        class="form-control" placeholder="Password">
+                                <label class="col-sm-3 col-form-label">Diterima</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_id ?>" name="idParty" type="hidden">
+                                    <input value="<?php echo $dataParty->party_diterima ?>" name="diterima" type="text" class="form-control" placeholder="Diterima">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">No. DO</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_do ?>" name="do" type="text"
-                                        class="form-control" placeholder="Nama">
+                                <label class="col-sm-3 col-form-label">Tujuan</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_tujuan ?>" name="tujuan" type="text" class="form-control" placeholder="Tujuan">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">No. PO</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_po ?>" name="po" type="text"
-                                        class="form-control" placeholder="Nama">
+                                <label class="col-sm-3 col-form-label">No. SPK / STO</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_spk ?>" name="spk" type="text" class="form-control" placeholder="No. SPK / STO">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">No. Kontrak</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_nokontrak ?>" name="nokontrak"
-                                        type="text" class="form-control" placeholder="No Kontrak">
+                                <label class="col-sm-3 col-form-label">No. DO</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_do ?>" name="do" type="text" class="form-control" placeholder="No. DO">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Kontrak</label>
-                                <div class="col-sm-10">
-                                    <input value="<?php echo $dataPerRow->party_kontrak ?>" name="kontrak" type="text"
-                                        class="form-control" placeholder="Nama">
+                                <label class="col-sm-3 col-form-label">No. PO</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_po ?>" name="po" type="text" class="form-control" placeholder="No. PO">
                                 </div>
                             </div>
-
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">No. Kontrak</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_nokontrak  ?>" name="nokontrak" type="text" class="form-control" placeholder="No. Kontrak">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kontrak Tonase</label>
+                                <div class="col-sm-9">
+                                    <input value="<?php echo $dataParty->party_kontrak ?>" name="kontrak" type="number" class="form-control" placeholder="Kontrak Tonase">
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.card-body -->
                         <div class="card-footer">
-                            <button name="edit" type="submit" class="btn btn-info">Edit</button>
+                            <button name="simpan" type="submit" class="btn btn-primary">Simpan</button>
                             <button type="reset" class="btn btn-warning float-center">Reset</button>
                             <a href="index.php?page=module/party/index" class="btn btn-success float-right">Kembali</a>
                         </div>
-                        <!-- /.card-footer -->
                     </form>
-                    <?php endforeach ?>
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
     </section>
-    <!-- /.content -->
 </div>

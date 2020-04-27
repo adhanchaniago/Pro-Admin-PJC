@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 26 Apr 2020 pada 22.10
+-- Waktu pembuatan: 27 Apr 2020 pada 10.17
 -- Versi server: 10.3.16-MariaDB
 -- Versi PHP: 7.1.30
 
@@ -52,6 +52,9 @@ INSERT INTO `tb_admin` (`admin_id`, `admin_username`, `admin_password`, `admin_n
 CREATE TABLE `tb_party` (
   `party_id` int(11) NOT NULL,
   `perusahaan_id` int(11) DEFAULT NULL,
+  `party_diterima` varchar(255) DEFAULT NULL,
+  `party_tujuan` varchar(255) DEFAULT NULL,
+  `jenis` varchar(255) DEFAULT 'Palm Karnel',
   `party_spk` varchar(255) DEFAULT NULL,
   `party_do` varchar(255) DEFAULT NULL,
   `party_po` varchar(225) DEFAULT NULL,
@@ -63,8 +66,9 @@ CREATE TABLE `tb_party` (
 -- Dumping data untuk tabel `tb_party`
 --
 
-INSERT INTO `tb_party` (`party_id`, `perusahaan_id`, `party_spk`, `party_do`, `party_po`, `party_nokontrak`, `party_kontrak`) VALUES
-(12, 8, '7786024074', '014/DO/BBIP-UIP/PK/II/2020', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 90000);
+INSERT INTO `tb_party` (`party_id`, `perusahaan_id`, `party_diterima`, `party_tujuan`, `jenis`, `party_spk`, `party_do`, `party_po`, `party_nokontrak`, `party_kontrak`) VALUES
+(12, 8, 'PT. USAHA INTI PADANG', 'CV Mediatama Web Indonesia Padang', 'Palm Karnel', '7786024074', '014/DO/BBIP-UIP/PK/II/2020', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 90000),
+(13, 7, 'PT. USAHA INTI PADANG', 'CV Mediatama Web Indonesia Padang', 'Palm Karnel', 'SP00123213', 'DO12312321', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 100000);
 
 -- --------------------------------------------------------
 
@@ -155,6 +159,7 @@ INSERT INTO `tb_perusahaan` (`perusahaan_id`, `perusahaan_nama`, `perusahaan_tel
 CREATE TABLE `tb_pupuk` (
   `pupuk_id` int(11) NOT NULL,
   `perusahaan_id` int(11) DEFAULT NULL,
+  `jenis` varchar(255) DEFAULT 'Pupuk',
   `pupuk_spk` varchar(225) DEFAULT NULL,
   `pupuk_do` varchar(225) DEFAULT NULL,
   `pupuk_po` varchar(225) DEFAULT NULL,
@@ -167,8 +172,8 @@ CREATE TABLE `tb_pupuk` (
 -- Dumping data untuk tabel `tb_pupuk`
 --
 
-INSERT INTO `tb_pupuk` (`pupuk_id`, `perusahaan_id`, `pupuk_spk`, `pupuk_do`, `pupuk_po`, `pupuk_nokontrak`, `pupuk_kontrak`, `pupuk_jenis`) VALUES
-(5, 8, 'SP00123213', 'DO12312321', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 400000, 'Urea');
+INSERT INTO `tb_pupuk` (`pupuk_id`, `perusahaan_id`, `jenis`, `pupuk_spk`, `pupuk_do`, `pupuk_po`, `pupuk_nokontrak`, `pupuk_kontrak`, `pupuk_jenis`) VALUES
+(5, 8, 'Pupuk', 'SP00123213', 'DO12312321', '014/PO/BBIP-UIP/PK/II/2020', '013/SPK/BBIP/-UIP/II/20', 400000, 'Urea');
 
 -- --------------------------------------------------------
 
@@ -300,7 +305,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT untuk tabel `tb_party`
 --
 ALTER TABLE `tb_party`
-  MODIFY `party_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `party_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_party_detail`

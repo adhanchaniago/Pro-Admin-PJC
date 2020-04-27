@@ -63,14 +63,15 @@
                                         <td width="200px">
                                             <a href="index.php?page=module/party/tagihan&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-info">Invoice</a>
                                             <a href="index.php?page=module/party/invoice&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-success">Rekapitulasi</a>
-                                            <!-- <a href="index.php?page=module/party/rekap&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-success">Rekap</a> -->
 
                                             <p class="mt-1 mb-1"></p>
-                                            <!-- <a href="index.php?page=module/party/edit&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-warning">Edit</a> -->
-                                            <a align='right' href="index.php?page=module/party/hapus&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-danger">Hapus</a>
+
                                             <a href="index.php?page=module/party/detail&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-primary">Transporter</a>
 
-                                            <!-- <a href="index.php?page=module/party/invoice&id=<?php echo $id ?>" class="btn btn-info mb-4"><span class="fa fa-print"></span> Cetak</a> -->
+                                            <p class="mt-1 mb-1"></p>
+
+                                            <a href="index.php?page=module/party/edit&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a align='right' href="index.php?page=module/party/hapus&id=<?= $dataParty->party_id ?>" class="btn btn-sm btn-danger">Hapus</a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

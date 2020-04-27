@@ -165,28 +165,32 @@ class Db extends Conn
                             ")[0];
         return $query;
     }
-    // public function editParty($data)
-    // {
-    //     global $conn;
+    public function editParty($data)
+    {
+        global $conn;
 
-    //     $id         = $data['id'];
-    //     $perusahaan = $data['perusahaan'];
-    //     $spk        = $data['spk'];
-    //     $do         = $data['do'];
-    //     $po         = $data['po'];
-    //     $nokontrak  = $data['nokontrak'];
-    //     $kontrak    = $data['kontrak'];
+        $idParty    = $data['idParty'];
+        $perusahaan = $data['perusahaan'];
+        $diterima   = $data['diterima'];
+        $tujuan     = $data['tujuan'];
+        $spk        = $data['spk'];
+        $do         = $data['do'];
+        $po         = $data['po'];
+        $nokontrak  = $data['nokontrak'];
+        $kontrak    = $data['kontrak'];
 
-    //     $query    = "UPDATE tb_party SET    perusahaan_id   = '$perusahaan',
-    //                                         party_spk       = '$spk',
-    //                                         party_do        = '$do',
-    //                                         party_po        = '$po',
-    //                                         party_nokontrak = '$nokontrak',
-    //                                         party_kontrak   = '$kontrak'
-    //                                         WHERE
-    //                                         party_id = '$id'";
-    //     return $conn->query($query);
-    // }
+        $query    = "UPDATE tb_party SET    perusahaan_id   = '$perusahaan',
+                                            party_diterima  = '$diterima',
+                                            party_tujuan    = '$tujuan',
+                                            party_spk       = '$spk',
+                                            party_do        = '$do',
+                                            party_po        = '$po',
+                                            party_nokontrak = '$nokontrak',
+                                            party_kontrak   = '$kontrak'
+                                            WHERE
+                                            party_id = '$idParty'";
+        return $conn->query($query);
+    }
 
     // Party CRUD
     public function getAllDetailParty($id)
