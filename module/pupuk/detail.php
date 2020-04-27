@@ -111,22 +111,22 @@
                                             <td><?= $data->pupuk_detail_no_polisi ?></td>
                                             <td><?= $data->pupuk_detail_do ?></td>
                                             <td><?= $data->pupuk_detail_sppb ?></td>
-                                            <td><?= $data->pupuk_detail_tgl_muat_pabrik ?></td>
-                                            <td><?= $data->pupuk_detail_ton_muat_pabrik ?></td>
-                                            <td><?= $data->pupuk_detail_satuanmuat ?> <?php echo $data->pupuk_detail_jenis ?></td>
-                                            <td><?= $data->pupuk_detail_nettomuat ?></td>
-                                            <td><?= $data->pupuk_detail_tgl_bongkar_uip ?></td>
-                                            <td><?= $data->pupuk_detail_ton_bongkar_uip ?></td>
-                                            <td><?= $data->pupuk_detail_satuanbongkar ?> <?php echo $data->pupuk_detail_jenis ?></td>
-                                            <td><?= $data->pupuk_detail_nettobongkar ?></td>
-                                            <td><?= $data->pupuk_detail_selisih_ton ?></td>
+                                            <td><?= tgl_indo($data->pupuk_detail_tgl_muat_pabrik) ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_ton_muat_pabrik) ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_satuanmuat) ?> <?php echo $data->pupuk_detail_jenis ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_nettomuat) ?></td>
+                                            <td><?= tgl_indo($data->pupuk_detail_tgl_bongkar_uip) ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_ton_bongkar_uip) ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_satuanbongkar) ?> <?php echo $data->pupuk_detail_jenis ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_nettobongkar) ?></td>
+                                            <td><?= format_angka($data->pupuk_detail_selisih_ton) ?></td>
                                             <td><?= $data->pupuk_detail_nama_supir ?></td>
                                             <td><?= format_angka($data->pupuk_detail_upah_kg) ?></td>
-                                            <td><?= format_angka($data->pupuk_detail_jum_tagihan) ?></td>
-                                            <td><?= format_angka($data->pupuk_detail_admin) ?></td>
-                                            <td><?= format_angka($data->pupuk_detail_driver_deposito) ?></td>
-                                            <td><?= $data->pupuk_detail_nagari ?></td>
-                                            <td><?= $data->pupuk_detail_total_tagihan ?></td>
+                                            <td><?= rupiah($data->pupuk_detail_jum_tagihan) ?></td>
+                                            <td><?= rupiah($data->pupuk_detail_admin) ?></td>
+                                            <td><?= rupiah($data->pupuk_detail_driver_deposito) ?></td>
+                                            <td><?= rupiah($data->pupuk_detail_nagari) ?></td>
+                                            <td><?= rupiah($data->pupuk_detail_total_tagihan) ?></td>
                                         </tr>
                                     <?php endforeach ?>
                                 </tbody>
