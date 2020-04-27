@@ -26,6 +26,9 @@
             <a href="index.php?page=module/pupuk/index" class="nav-link">Pupuk</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
+            <a href="index.php?page=module/tracking/index" class="nav-link">Palm Kernel & Pupuk</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
             <a href="logout.php" class="nav-link">Sign Out</a>
         </li>
     </ul>

@@ -596,4 +596,13 @@ class Db extends Conn
                                             satuan_id = '$id'";
         return $conn->query($query);
     }
+    public function getAllPupukAndPalm()
+    {
+        $query = $this->get("   SELECT `party_id`, `perusahaan_id`, `jenis`, `party_spk`, `party_do`, `party_po`, `party_nokontrak`, `party_kontrak` 
+        FROM `tb_party`
+        UNION
+        SELECT `pupuk_id`, `perusahaan_id`, `jenis`, `pupuk_spk`, `pupuk_do`, `pupuk_po`, `pupuk_nokontrak`, `pupuk_kontrak`  
+        FROM `tb_pupuk` ");
+        return $query;
+    }
 }
